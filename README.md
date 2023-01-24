@@ -10,7 +10,6 @@ Sebuah program untuk mendapat semua kemungkinan solusi dari Game 24. Program ini
 C++
 
 ## Repository Structure
-## Repository Structure
 ```bash
 .
 │   README.md
