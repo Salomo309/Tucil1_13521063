@@ -92,7 +92,7 @@ int charToOps(char op, int num1, int num2) {
     }
 }
 
-void permutation(int input[4]) {
+string permutation(int input[4]) {
     int i,j,k,l;
     int n;
     int temp[4];
@@ -100,6 +100,7 @@ void permutation(int input[4]) {
     char ops[4] = {'+', '-', '*', '/'};
     int count = 0;
     int num1, num2, num3, num4, num5, p;
+    string hasil = "";
     
     for (n = 0; n < 4; n++) {
         temp[n] = input[n];
@@ -136,19 +137,52 @@ void permutation(int input[4]) {
                                     
                                     if (num1 == 24) {
                                         count = count + 1;
+                                        hasil += temp[0] + " " + ops[x];
+                                        hasil += " (";
+                                        hasil += temp[1] + " " + ops[y];
+                                        hasil += " (" + temp[2];
+                                        hasil += " "; 
+                                        hasil += ops[z] + " " + temp[3];
+                                        hasil += "))";
+                                        hasil = hasil + '\n';
                                     }
                                         
-                                    if (num2 == 24) {
+                                    if (num2 == 24) { 
                                         count = count + 1;
+                                        hasil += temp[0] + " " + ops[x];
+                                        hasil += " ((";
+                                        hasil += temp[1] + " " + ops[y];
+                                        hasil += " )" + temp[2];
+                                        hasil += " "; 
+                                        hasil += ops[z] + " " + temp[3];
+                                        hasil += ")";
+                                        hasil = hasil + '\n';
                                     }
                                         
                                     if (num3 == 24) {
                                         count = count + 1;
-                                        
+                                        hasil += " ((";
+                                        hasil += temp[0] + " " + ops[x] + temp[1];
+                                        hasil += ") ";
+                                        hasil += " " + ops[y];
+                                        hasil += " )" + temp[2];
+                                        hasil += " "; 
+                                        hasil += ops[z] + " " + temp[3];
+                                        hasil = hasil + '\n';
                                     }
                                         
                                     if (num4 == 24) {
                                         count = count + 1;
+                                        count = count + 1;
+                                        hasil += " (";
+                                        hasil += temp[0] + " " + ops[x];
+                                        hasil += "( ";
+                                        hasil += temp[1];
+                                        hasil += " " + ops[y];
+                                        hasil += " ))" + temp[2];
+                                        hasil += " "; 
+                                        hasil += ops[z] + " " + temp[3];
+                                        hasil = hasil + '\n';
                                     }
                                 }
                             }
@@ -158,6 +192,10 @@ void permutation(int input[4]) {
             }
         }
     }
+
+    cout << endl;
+    cout << count;
+    cout << " Solutions Found";
 
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 4; j++) {
@@ -202,7 +240,7 @@ void permutation(int input[4]) {
                                         
                                     if (num3 == 24) {
                                         count = count + 1;
-                                        cout << "(("<< temp[0] << " " << ops[x] << " " << temp[1] << ") " << ops[y] << " " << temp[2] << ")) " << ops[z] << " " << temp[3];
+                                        cout << "(("<< temp[0] << " " << ops[x] << " " << temp[1] << ") " << ops[y] << " " << temp[2] << ") " << ops[z] << " " << temp[3];
                                         cout << endl;
                                     }
                                         
@@ -219,8 +257,4 @@ void permutation(int input[4]) {
             }
         }
     }
-    
-    cout << endl;
-    cout << count;
-    cout << " Solutions Found";
 }

@@ -22,7 +22,7 @@ int main() {
     cout << endl;
 
     ofstream fileSave;
-    fileSave.open("testCase.txt");
+    
 
     if (ans == 'y') {
         randomGen(e,f,g,h);
@@ -56,10 +56,20 @@ int main() {
     scanf("%c", &answer);
 
     if (answer == 'y') {
-        "TERIMA KASIH";
+        string file;
+        string nameFile = ".txt";
+
+        cout << "Please, enter the name for your output file: ";
+        getline(cin, file);
+        file += ".txt";
+        string path = "C:/Users/Asus/OneDrive - Institut Teknologi Bandung/Documents/GitHub/Tucil1_13521063/test/";
+        path += file;
+
+        fileSave.open(path);
+        cout << input;
         fileSave.close();
     } else {
-        "TERIMA KASIH";
+        cout << "TERIMA KASIH";
         exit;
     }
 
