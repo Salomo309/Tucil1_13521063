@@ -15,8 +15,9 @@ C++
 │   README.md
 │   
 ├───doc
+│      Tucil1_13521063_Salomo Reinhart Gregory Manalu.pdf
 │      Tucil1_13521063_Salomo Reinhart Gregory Manalu_Revisi1.pdf
-│
+│      
 └───src
     └───main.cpp
     └───solver.cpp
